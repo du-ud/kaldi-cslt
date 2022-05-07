@@ -1,0 +1,14 @@
+*.aif
+*.au
+*.raw
+*.wav
+????.sph
+123_1alaw.sph
+123_1pcbe.sph
+123_1pcle.sph
+123_1ulaw.sph
+123_2pcbe.sph
+123_2pcle.sph
+123_2ulaw.sph
+outfile-md5.list
+sph2pipe

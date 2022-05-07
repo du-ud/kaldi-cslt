@@ -1,0 +1,55 @@
+Clarifying licensing status - kkm, January 2019:
+
+Copyright (C) 2005 Linguistic Data Consortium
+Copyright (C) 2005 Tony Robinson
+Copyright (C) 2005 SoX AUTHORS
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+Place, Suite 330, Boston, MA 02111-1307 USA
+
+---
+
+Below is the original "License" section from the package README file. Since the
+licensing state of the program is not clear from this language, believe GPLv2 to
+be the most suitable for this code, as it the license used by sox, parts of
+which are used, and it is probably the most restrictive of all mentioned here.
+
+YMMV regarding the code that is NOT listed below; it lacks any licensing
+statements altogether. My goal here is to make sure the package source is always
+distributed with the binary, and that you can have something to say if you are a
+startup getting investment.  I've been in this boat, and having a clear
+licensing statement for every software package is usually a requirement.
+
+---
+
+5. License
+
+Various portions of source code from Tony Robinson's "shorten-2.0"
+package are used here by permission of Tony Robinson and SoftSound,
+Inc. <http://www.softsound.com> -- these portions are found in the file
+"shorten_x.c"; please note the copyright information in that file.  By
+agreement with Tony Robinson and SoftSound, Inc, the Linguistic Data
+Consortium (LDC) grants permission to copy and use this software for the
+purpose of reading "shorten"-compressed speech data provided in NIST
+SPHERE file format by the LDC or others.  SoftSound provides useful
+tools for audio compression and other signal processing tasks.
+
+Other portions of source code (in particular the "writeRIFFHeader" and
+"writeAIFFHeader" functions in "file_headers.c", and the "alaw2pcm"
+conversion function) were adapted from the "SoX" package, a valuable
+open-source tool maintained primarily by Chris Bagwell, with assistance
+from many others (http://sox.sourceforge.net/).  We gratefully
+acknowledge the value provided by all contributors to SoX; sph2pipe
+would have been much harder to write without this resource.  We
+recommend that you use SoX if you need to do sample-rate conversion on
+audio data.
