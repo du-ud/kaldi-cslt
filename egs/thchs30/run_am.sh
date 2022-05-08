@@ -21,6 +21,14 @@ echo '###### Bookmark: basic preparation ######'
 # corpus and trans directory
 thchs=/work105/duwenqiang/data/
 
+
+#you can obtain the database by uncommting the following lines
+#[ -d $thchs ] || mkdir -p $thchs  || exit 1
+#echo "downloading THCHS30 at $thchs ..."
+#local/download_and_untar.sh $thchs  http://www.openslr.org/resources/18 data_thchs30  || exit 1
+#local/download_and_untar.sh $thchs  http://www.openslr.org/resources/18 resource      || exit 1
+
+
 if [ $stage -le 1 ];then
   local/thchs-30_data_prep.sh $thchs/data_thchs30
   ln -s $thchs/data_thchs30 data_thchs30
