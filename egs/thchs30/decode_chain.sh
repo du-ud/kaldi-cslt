@@ -12,7 +12,7 @@ for data_set in test  ;do
       --stage $stage \
       $exp_dir/graph  data/fbank/$data_set $exp_dir/decode_graph_final
 done
-cat $exp_dir/scoring_kaldi/best_wer
+cat $exp_dir/decode_graph_final/scoring_kaldi/best_wer
 
 #result: %WER 21.75 [ 17647 / 81139, 149 ins, 664 del, 16834 sub ] exp/chain-skip/tdnn-f-cn/decode_graph_final/wer_10_0.0
 
