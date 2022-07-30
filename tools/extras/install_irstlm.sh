@@ -22,10 +22,9 @@ fi
 
 
 if [ ! -d ./irstlm ] ; then
-  if ! $GIT --version >&/dev/null ; then
-    errcho "****() You need to have git installed"
-    exit 1
-  fi
+  if [ -f irstlm.tar.gz ] ; then
+    tar -zmxf irstlm.tar.gz || exit 1
+  else
   (
     $GIT clone https://github.com/irstlm-team/irstlm.git irstlm
   ) || {
@@ -33,6 +32,7 @@ if [ ! -d ./irstlm ] ; then
     errcho "****() might be down."
     exit 1
   }
+  fi
 else
   echo "****() Assuming IRSTLM is already installed. Please delete"
   echo "****() the directory ./irstlm if you need us to download"

@@ -19,10 +19,15 @@ fi
 
 tarball=OpenBLAS-$OPENBLAS_VERSION.tar.gz
 
-rm -rf xianyi-OpenBLAS-* OpenBLAS OpenBLAS-*.tar.gz
+rm -rf xianyi-OpenBLAS-* OpenBLAS
+if [ ! -d ./extras ]; then
+  errcho "****** You are trying to install OPENBLAS from the wrong directory.  You should"
+  errcho "****** go to tools/ and type extras/install_openblas.sh."
+  exit 1
+fi
 
-if [ -d "$DOWNLOAD_DIR" ]; then
-  cp -p "$DOWNLOAD_DIR/$tarball" .
+if [ -f $tarball ]; then
+  echo "$tarball already exits."
 else
   url=$($WGET -qO- "https://api.github.com/repos/xianyi/OpenBLAS/releases/tags/v${OPENBLAS_VERSION}" | python -c 'import sys,json;print(json.load(sys.stdin)["tarball_url"])')
   test -n "$url"
@@ -35,5 +40,4 @@ mv xianyi-OpenBLAS-* OpenBLAS
 make PREFIX=$(pwd)/OpenBLAS/install USE_LOCKING=1 USE_THREAD=0 -C OpenBLAS all install
 if [ $? -eq 0 ]; then
    echo "OpenBLAS is installed successfully."
-   rm $tarball
 fi
